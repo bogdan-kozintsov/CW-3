@@ -11,26 +11,25 @@
 #     print(formated)
 
 
-
 # ниже код из консультации с наставником:
 
 
-import json
-from src.utils import OPERATION, get_operations, get_executed_only, sort_by_date, last_five_operations, get_formated_operation
 
-all_operations = get_operations(OPERATION)
+from src.utils import operations_list, get_operations, get_executed_only, sort_by_date, last_five_operations, \
+    get_formated_operation
+
+all_operations = get_operations(operations_list)
 
 filtered_operations = get_executed_only(all_operations)
-print(filtered_operations)
-print(len(filtered_operations))
-
+# print(filtered_operations)
+# print(len(filtered_operations))
 
 sorted_operations = sort_by_date(filtered_operations)
-print(sorted_operations)
-
+# print(sorted_operations)
 
 recent_operations = last_five_operations(sorted_operations)
 print(recent_operations)
+
 #
 #
 # for operation in five_operations:

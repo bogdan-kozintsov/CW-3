@@ -3,38 +3,50 @@ import json
 from datetime import datetime
 from config import ROOT_DIR
 
-OPERATION = os.path.join(ROOT_DIR, 'operations.json')
+operations_list = os.path.join(ROOT_DIR, 'operations.json')
 
-def get_operations(OPERATION):
+
+def get_operations(operations_list):
     """Функция открытия файла"""
-    with open(OPERATION, encoding='UTF8') as file:
+    with open(operations_list, encoding='UTF8') as file:
         file = json.load(file)
-
     return file
 
 
 def get_executed_only(file):
-
+    """Функция получает все операции и фильтрует список, возвращая только EXECUTED"""
     valid_file = list(filter(lambda i: 'id' in i, file))
     executed_operations = list(filter(lambda x: x["state"] == "EXECUTED", valid_file))
     return list(executed_operations)
 
 
 def sort_by_date(executed_operations):
+    """Функция получает все выполненные операции и сортирует их по дате в обратном порядке """
     sorted_list = sorted(executed_operations, key=lambda x: x['date'], reverse=True)
     return sorted_list
 
+
 def last_five_operations(sorted_operations):
+    """Функция принимает отсортированные выполненные операции и возвращает 5 последних операций"""
     five_operations = sorted_operations[:5]
     return five_operations
 
 
-
-
 def get_formated_operation():
-    pass
+    """Функция принимает последние 5 операций и возвращает их в отформатированном виде"""
 
 
+def hide_number(requisites: str):
+    parts = requisites.split()
+    number = parts[-1]
+    if requisites.lower().startswith('счет'):
+        hided_number = f'**{number[-4:]}'
+    else:
+        hided_number = f'**{number[:4]} {number[4:6]}** **** {number[-4:]}'
+    parts[-1] = hided_number
+    return ' '.join(parts)
+
+print(hide_number("Maestro 1308795367077170"))
 
 
 # def sorted_date(date):
@@ -49,9 +61,6 @@ def get_formated_operation():
 #     five_transactions = sort_date[:5]
 #
 #     return five_transactions
-
-
-
 
 
 # def format_date(_date):
