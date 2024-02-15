@@ -30,6 +30,7 @@ def get_formated_operation():
 
 
 
+
 # def sorted_date(date):
 #     new_data = []
 #     for item in date:

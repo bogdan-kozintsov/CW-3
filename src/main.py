@@ -27,6 +27,7 @@ print(len(filtered_operations))
 
 sorted_operations = sort_by_date(filtered_operations)
 print(sorted_operations)
+
 #
 # five_operations = sorted_operations[:5]
 # print(five_operations)
