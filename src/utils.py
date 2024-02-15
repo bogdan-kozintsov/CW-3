@@ -21,7 +21,7 @@ def get_executed_only(file):
 
 
 def sort_by_date(executed_operations):
-    sorted_list = sorted(executed_operations, key=lambda x: x['date'])
+    sorted_list = sorted(executed_operations, key=lambda x: x['date'], reverse=True)
     return sorted_list
 
 
