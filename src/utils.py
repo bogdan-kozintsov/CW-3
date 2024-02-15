@@ -20,8 +20,9 @@ def get_executed_only(file):
     return list(executed_operations)
 
 
-def sort_by_date():
-    pass
+def sort_by_date(executed_operations):
+    sorted_list = sorted(executed_operations, key=lambda x: x['date'])
+    return sorted_list
 
 
 def get_formated_operation():
