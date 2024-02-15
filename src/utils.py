@@ -16,14 +16,18 @@ print(get_operations(OPERATION))
 
 
 def get_executed_only(file):
-    filtered_operations = filter(lambda x: x["state"] == "EXECUTED", file)
-    print(list(filtered_operations))
+
+    valid_file = list(filter(lambda i: 'id' in i, file))
+    executed_operations = list(filter(lambda x: x["state"] == "EXECUTED", valid_file))
+    return list(executed_operations)
 
 all_operations = get_operations(OPERATION)
 print(all_operations)
 
-new_list = get_executed_only(all_operations)
-print(new_list)
+filtered_operations = get_executed_only(all_operations)
+print(filtered_operations)
+
+
 
 
 
