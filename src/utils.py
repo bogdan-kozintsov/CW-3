@@ -49,6 +49,13 @@ def hide_number(requisites: str):
 print(hide_number("Maestro 1308795367077170"))
 
 
+def formate_date(date):
+    date_only = date[:10]
+    parts = date_only.split('-')
+    return '.'.join(reversed(parts))
+
+print(formate_date("2019-07-13T18:51:29.313309"))
+
 # def sorted_date(date):
 #     new_data = []
 #     for item in date:
