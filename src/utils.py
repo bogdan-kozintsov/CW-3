@@ -24,6 +24,12 @@ def sort_by_date(executed_operations):
     sorted_list = sorted(executed_operations, key=lambda x: x['date'], reverse=True)
     return sorted_list
 
+def last_five_operations(sorted_operations):
+    five_operations = sorted_operations[:5]
+    return five_operations
+
+
+
 
 def get_formated_operation():
     pass

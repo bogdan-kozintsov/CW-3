@@ -16,7 +16,7 @@
 
 
 import json
-from src.utils import OPERATION, get_operations, get_executed_only, sort_by_date, get_formated_operation
+from src.utils import OPERATION, get_operations, get_executed_only, sort_by_date, last_five_operations, get_formated_operation
 
 all_operations = get_operations(OPERATION)
 
@@ -29,8 +29,8 @@ sorted_operations = sort_by_date(filtered_operations)
 print(sorted_operations)
 
 
-five_operations = sorted_operations[:5]
-print(five_operations)
+recent_operations = last_five_operations(sorted_operations)
+print(recent_operations)
 #
 #
 # for operation in five_operations:
