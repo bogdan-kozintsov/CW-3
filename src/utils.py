@@ -12,28 +12,12 @@ def get_operations(OPERATION):
 
     return file
 
-print(get_operations(OPERATION))
-
 
 def get_executed_only(file):
 
     valid_file = list(filter(lambda i: 'id' in i, file))
     executed_operations = list(filter(lambda x: x["state"] == "EXECUTED", valid_file))
     return list(executed_operations)
-
-all_operations = get_operations(OPERATION)
-print(all_operations)
-
-filtered_operations = get_executed_only(all_operations)
-print(filtered_operations)
-
-
-
-
-
-
-
-
 
 
 def sort_by_date():

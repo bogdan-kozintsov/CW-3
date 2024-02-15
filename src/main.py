@@ -16,20 +16,21 @@
 
 
 import json
-from src.utils import get_operations, get_executed_only, sort_by_date, get_formated_operation
+from src.utils import OPERATION, get_operations, get_executed_only, sort_by_date, get_formated_operation
 
-all_operations = get_operations('operations.json')
-print(all_operations)
+all_operations = get_operations(OPERATION)
 
 filtered_operations = get_executed_only(all_operations)
 print(filtered_operations)
-
-sorted_operations = sort_by_date(filtered_operations)
-print(sorted_operations)
-
-five_operations = sorted_operations[:5]
-print(five_operations)
+print(len(filtered_operations))
 
 
-for operation in five_operations:
-    print(get_formated_operation(operation))
+# sorted_operations = sort_by_date(filtered_operations)
+# print(sorted_operations)
+#
+# five_operations = sorted_operations[:5]
+# print(five_operations)
+#
+#
+# for operation in five_operations:
+#     print(get_formated_operation(operation))
