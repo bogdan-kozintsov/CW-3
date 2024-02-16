@@ -27,15 +27,8 @@ def sort_by_date(executed_operations):
 
 def last_five_operations(sorted_operations):
     """Функция принимает отсортированные выполненные операции и возвращает 5 последних операций"""
-    five_operations = reversed(sorted_operations[:5])
+    five_operations = sorted_operations[:5]
     return five_operations
-
-
-def get_formated_operation():
-    """Функция принимает последние 5 операций и возвращает их в отформатированном виде"""
-
-
-
 
 
 def hide_number(requisites: str):
@@ -50,14 +43,8 @@ def hide_number(requisites: str):
     return ' '.join(parts)
 
 
-
-
-
 def formate_date(date):
     """Функция форматирования даты"""
     date_only = date[:10]
     parts = date_only.split('-')
     return '.'.join(reversed(parts))
-
-
-
