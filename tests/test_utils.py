@@ -1,6 +1,5 @@
 from src import utils
-from src.utils import (operations_list, get_operations, get_executed_only, sort_by_date,
-                       last_five_operations, formate_date, hide_number)
+from src.utils import (operations_list, get_operations, get_executed_only, sort_by_date, show_recent_operations)
 
 
 def test_get_operations():
@@ -2152,14 +2151,5 @@ def test_hide_number():
 def test_formate_date():
     assert utils.formate_date("2019-12-08T22:46:21.935582") == "08.12.2019"
 
-#
-# def test_get():
-#     assert arrs.get([1, 2, 3], 2, "test") == 3
-#     assert arrs.get([], 0, "test") == "test"
-#
-#
-# def test_slice():
-#     assert arrs.my_slice([1, 2, 3, 4], 1, 3) == [2, 3]
-#     assert arrs.my_slice([1, 2, 3], 1) == [2, 3]
-#     assert arrs.my_slice([], 1) == []
-#     assert arrs.my_slice([1, 2, 3], None, 1) == [1]
+# def show_recent_operations():
+#     assert utils.show_recent_operations()

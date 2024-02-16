@@ -4,6 +4,7 @@ from config import ROOT_DIR
 
 operations_list = os.path.join(ROOT_DIR, 'operations.json')
 
+
 def get_operations(operations_list):
     """Функция открытия файла"""
     with open(operations_list, encoding='UTF8') as file:
@@ -47,3 +48,22 @@ def formate_date(date):
     date_only = date[:10]
     parts = date_only.split('-')
     return '.'.join(reversed(parts))
+
+
+def show_recent_operations(recent_operations):
+    """Функция выводит 5 последних операций в формате:
+    Пример вывода для одной операции:
+    14.10.2018 Перевод организации
+    Visa Platinum 7000 79** **** 6361 -> Счет **9638
+    82771.72 руб.
+    """
+    for operation in recent_operations:
+        date = formate_date(operation['date'])
+        description = operation['description']
+        amount = operation["operationAmount"]['amount']
+        operation_to = hide_number(operation['to'])
+        if operation.get('from', False) != False:
+            operation_from = hide_number(operation['from'])
+            print(f'{date} {description}\n{operation_from} -> {operation_to}\n{amount} руб.\n')
+        else:
+            print(f'{date} {description}\n-> {operation_to}\n{amount} руб.\n')
