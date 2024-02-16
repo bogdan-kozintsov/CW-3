@@ -24,7 +24,6 @@ for operation in recent_operations:
 # "from" (с шифром) -> "to" (с шифром)
 # "amount" руб.
 
-
 # "id": 441945886,
 # "state": "EXECUTED",
 # "date": "2019-08-26T10:50:58.294041",

@@ -4,7 +4,6 @@ from config import ROOT_DIR
 
 operations_list = os.path.join(ROOT_DIR, 'operations.json')
 
-
 def get_operations(operations_list):
     """Функция открытия файла"""
     with open(operations_list, encoding='UTF8') as file:
